@@ -1,0 +1,17 @@
+node_modules
+.nyc_output
+npm-debug.log
+*.log*
+!config.json.template
+config.json*
+logs/
+.vscode/
+/config/**/*.json
+# Mac OS sed -i option takes a extension and with update-upline creates a but of *.json-e files because sed -i -e "COMMAND" $1
+*.json-e
+.DS_Store
+
+coverage
+xunit.xml
+out
+lint-results

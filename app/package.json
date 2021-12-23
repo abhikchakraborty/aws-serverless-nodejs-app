@@ -1,0 +1,16 @@
+{
+  "name": "serverless-demo",
+  "version": "1.0.0",
+  "description": "Sample nodejs api for serverless aws lambda",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Abhik Chakraborty",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "serverless": "^2.38.0",
+    "serverless-http": "^2.7.0"
+  }
+}

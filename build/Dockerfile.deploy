@@ -1,0 +1,9 @@
+FROM amazon/aws-lambda-nodejs:14
+LABEL maintainer="Abhik Chakraborty"
+
+WORKDIR /opt/app/sls
+
+ADD run_deploy.sh /opt/app/sls/
+ADD serverless.yml /opt/app/sls/
+RUN chmod +x /opt/app/sls/run_deploy.sh && npm install -g serverless
+ENTRYPOINT ["/opt/app/sls/run_deploy.sh"]

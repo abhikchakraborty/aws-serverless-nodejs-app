@@ -1,0 +1,24 @@
+service: sample-nodejs-serverless
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  lambdaHashingVersion: '20201221'
+  stage: dev # Default stage to be used. Default is "dev"
+  region: us-west-2
+  memorySize: 128 # Overwrite the default memory size. Default is 1024
+  timeout: 10 # The default is 6 seconds. Note: API Gateway current maximum is 30 seconds
+  iam: 
+    role: arn:aws:iam::xxxxxxxxxx:role/lamdba-execution
+
+functions:
+  api:
+    image: xxxxxxxxxx.dkr.ecr.us-west-2.amazonaws.com/serverless/app:1.0.0
+    events:
+      - http:
+          path: /
+          method: ANY
+      - http:
+          path: /{proxy+}
+          method: ANY
+
